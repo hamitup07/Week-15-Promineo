@@ -10,6 +10,7 @@ export default function NewRoomForm(props) {
         setArea(int >= 0 ? int : "");
     }
 
+    // onSubmit function checks for name and area text inputs to be filled, and alerts the user if either are missing
     const onSubmit = (e) => {
         e.preventDefault();
         if (name && area) {
@@ -17,7 +18,7 @@ export default function NewRoomForm(props) {
             setName("");
             setArea('');
         } else {
-            alert("Invalid Input");
+            alert("Invalid Input. Please enter a Name and Area in square feet for the new room.");
         }
     };
 

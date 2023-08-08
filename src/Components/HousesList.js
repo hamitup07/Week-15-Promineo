@@ -9,27 +9,24 @@ export class HousesList extends React.Component {
         houses:  []
     };
 
-    // const [houses, setHouses] = useState([]);
 
     componentDidMount() {
         this.fetchHouses();
     };
 
-    // useEffect(() => {
-    //     fetchHouses();
-    // }, []);
-
+    // This method, like the others, uses async/await for efficiency 
     fetchHouses = async () => {
         const houses = await housesApi.get();
         this.setState({houses});
     };
 
+    // Method to update houses, calls fetch house each time:
     updateHouse = async (updatedHouse) => {
         await housesApi.put(updatedHouse);
         this.fetchHouses();
     };
 
-
+    // Structure of the page: a Navbar, plus the array of houses
     render() {
         return (
             <>

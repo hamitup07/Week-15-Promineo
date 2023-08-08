@@ -2,6 +2,8 @@ const HOUSES_ENDPOINT = "https://ancient-taiga-31359.herokuapp.com/api/houses";
 
 class HousesApi {
 
+    // Fetch methods:
+    
     get = async () => {
         try {
             const resp = await fetch(HOUSES_ENDPOINT);
@@ -13,7 +15,6 @@ class HousesApi {
         }
     }
 
-// Update rooms from house
     put = async (house) => {
         try {
             const resp = await fetch(`${HOUSES_ENDPOINT}/${house._id}`,  {

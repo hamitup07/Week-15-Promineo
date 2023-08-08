@@ -1,12 +1,17 @@
 import React from "react";
 import NewRoomForm from './NewRoomForm';
 
+
+// This component is the card for each individual house, and contains the methods to delete rooms and add rooms
 export default function House(props) {
     const { house, updateHouse } = props;
     
+    // Note that both deleteRoom and addNewRoom call the updateHouse method, rather than having two separate methods within the HouseList component
+
     const deleteRoom = (roomId) => {
         const updatedHouse = {
             ...house,
+            // The filter method allows the array update to be a single line:
             rooms: house.rooms.filter((x) => x._id !== roomId)
         };
 
